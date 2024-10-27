@@ -75,6 +75,31 @@ def manejar_eventos_juego():
                 global en_menu
                 en_menu = True
 
+#Clase jugador
+import random
+
+class Jugador:
+    def __init__(self, nombre):
+        self.nombre=nombre
+        self.cantidadCasilla=0
+        #La organización de las casilla es de forma posicional
+        self.fila=[] # fila de casilla
+        self.columna=[] # fcolumna de casilla
+
+    def asignarCasilla(self, fila, columna):
+        #asigna una casilla dada, al jugador
+        #agrega a cada lista la coordenada de la casilla dadas
+        self.fila.append(fila)
+        self.columna.append(columna)
+        #suma la cantidad de casillas
+        self.cantidadCasilla=self.cantidadCasilla + 1
+
+    def asignarCasillaRandom(self):
+        #asigna una casilla aleatoria al jugador
+        cantFila = 8
+        cantColumna = 8
+        self.asignarCasilla(random.randint(1, cantFila),random.randint(1, cantColumna))
+    
 
 while True:
     if en_menu:
