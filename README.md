@@ -1,1 +1,1 @@
-Juego de preguntas
+Juego de preguntas en Python
